@@ -1,0 +1,20 @@
+{
+    "name": "rayan/twig",
+    "license": "Rayan Jobtrek Copyright",
+    "autoload": {
+        "psr-4": {
+            "Rayan\\Twig\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "0xRayan",
+            "email": "rayan.seghrouchni@jobtrek.ch"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.0",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.6"
+    }
+}
