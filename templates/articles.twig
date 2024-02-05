@@ -46,6 +46,12 @@
             <li>
                 <h2>{{ article.title }}</h2>
                 <p>{{ article.text }}</p>
+
+                <!-- Delete button with a form -->
+                <form method="post" action="/delete-article">
+                    <input type="hidden" name="article_id" value="{{ article.id }}">
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
             </li>
         {% endfor %}
     </ul>

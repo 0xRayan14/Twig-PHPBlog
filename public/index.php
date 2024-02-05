@@ -36,8 +36,6 @@ $app->post('/submit-article', function ($request, $response) use ($pdo) {
         ->withStatus(302); // 302 Found (temporary redirect)
 });
 
-
-
 $app->get('/articles', function ($request, $response) use ($twig, $pdo) {
     // Fetch all articles from the 'articles' table
     $stmt = $pdo->query("SELECT * FROM articles");
@@ -47,7 +45,14 @@ $app->get('/articles', function ($request, $response) use ($twig, $pdo) {
     return $twig->render($response, 'articles.twig', ['articles' => $articles]);
 });
 
+$app->post('/delete-article', function ($request, $response) use ($pdo) {
+    $articleId = $request->getParsedBody()['article_id'];
 
+    $stmt = $pdo->prepare("DELETE FROM articles WHERE id = ?");
+    $stmt->execute([$articleId]);
+
+    return $response->withHeader('Location', '/articles')->withStatus(302);
+});
 
 
 $app->run();
