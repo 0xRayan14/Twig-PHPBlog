@@ -6,7 +6,21 @@
     <title>My Blog</title>
 </head>
 <body>
-<h1>Nils le bg</h1>
+<h1>JobTrek Blog</h1>
+
+<h1><a href="articles">All articles</a></h1>
+
+<form class="blog-input" method="post" action="/submit-article">
+    <h1>Title of the article</h1>
+    <input minlength="5" maxlength="40" type="text" name="article_title" placeholder="Title of the article" required>
+
+    <h3>Text of the article</h3>
+    <label>
+        <textarea minlength="5" maxlength="100" name="article_text" placeholder="Text of the article" required></textarea>
+    </label>
+
+    <input type="submit" value="Submit">
+</form>
 
 </body>
 </html>
