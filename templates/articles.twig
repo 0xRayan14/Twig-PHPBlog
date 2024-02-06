@@ -3,29 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article List</title>
+    <title>Articles List</title>
     <style>
-        .addAnArticle { color: blue; font-size: 18px; font-weight: bold; margin-bottom: 20px; }
+        .addAnArticle {
+            color: blue;
+            font-size: 35px;
+            text-underline: black;
+        }
         body {
             background-image: url('/wano-background.jpg');
             font-family: Arial, sans-serif;
         }
-        h1 { text-align: center; }
+        h1 { text-align: center; font-size: 5vh}
         ul { list-style-type: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: space-around; }
-        li { width: 27%; margin: 10px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease-in-out; }
+        li { font-size: 20px; width: 42%; margin: 10px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease-in-out; }
         li:hover { transform: scale(1.05); }
         p { word-wrap: break-word; }
-        .delete-button { background-color: #dc3545; color: #fff; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
+        .delete-button { font-size: 1.5vh; background-color: #dc3545; color: #fff; border: none; padding: 15px 17px; border-radius: 5px; cursor: pointer; }
         .delete-button:hover { background-color: #c82333; }
-        .edit-button { background-color: #007bff; color: #fff; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
+        .edit-button { font-size: 1.5vh; background-color: #007bff; color: #fff; border: none; padding: 15px 17px; border-radius: 5px; cursor: pointer; }
         .edit-button:hover { background-color: #218838; }
-        .button-container { display: flex; justify-content: space-between; }
+        .button-container { margin-bottom: 0; display: flex; justify-content: space-between; }
         .validation-message {
             background-color: #4CAF50;
+            margin-left: 30%;
+            margin-right: 30%;
             color: #fff;
-            padding: 10px;
             border-radius: 5px;
-            margin-bottom: 10px;
+            margin-bottom: 5%;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -33,7 +38,7 @@
     </style>
 </head>
 <body>
-<h2 class="addAnArticle"><a href="/">Add an article</a></h2>
+<h1 class="addAnArticle"><a href="/">Add an article</a></h1>
 <h1>Article List</h1>
 
 {% if messages %}
