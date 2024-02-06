@@ -66,6 +66,7 @@ $app->post('/edit-article', function ($request, $response) use ($pdo, $twig) {
     $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $twig->render($response, 'edit-article.twig', ['article' => $article]);
+
 });
 
 $app->post('/update-article', function ($request, $response) use ($pdo) {
