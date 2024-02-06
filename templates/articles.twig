@@ -34,12 +34,41 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .search-input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 50%;
+            margin-bottom: 10px;
+        }
+        .search-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .search-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
 <h1 class="addAnArticle"><a href="/">Add an article</a></h1>
 <h1>Article List</h1>
+
+<div class="search-bar">
+    <form method="get" action="/search">
+        <input type="text" name="title" class="search-input" placeholder="Search by title">
+        <button type="submit" class="search-button">Search</button>
+    </form>
+</div>
 
 {% if messages %}
     <div class="validation-message">

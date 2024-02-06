@@ -80,5 +80,15 @@ $app->post('/update-article', function ($request, $response) use ($pdo) {
     return $response->withHeader('Location', '/articles')->withStatus(302);
 });
 
+$app->get('/search', function ($request, $response) use ($twig, $pdo) {
+    $title = $request->getQueryParams()['title'];
+
+    $stmt = $pdo->prepare("SELECT * FROM articles WHERE title LIKE ?");
+    $stmt->execute(["%$title%"]);
+    $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $twig->render($response, 'articles.twig', ['articles' => $articles]);
+});
+
 
 $app->run();
