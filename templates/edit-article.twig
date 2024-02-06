@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Article</title>
+</head>
+<body>
+<h1 class="allArticles"><a href="/articles">All articles</a></h1>
+
+<h1>Edit Article</h1>
+
+<form method="post" action="/update-article">
+    <input type="hidden" name="article_id" value="{{ article.id }}">
+
+    <h2>Title of the article</h2>
+    <input minlength="5" maxlength="40" type="text" name="article_title" value="{{ article.title }}" required>
+
+    <h3>Text of the article</h3>
+    <textarea minlength="5" maxlength="750" name="article_text" required>{{ article.text }}</textarea>
+
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>

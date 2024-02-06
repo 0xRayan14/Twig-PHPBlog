@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article List</title>
     <style>
-        .addAnArticle { color: blue; }
-        body { font-family: Arial, sans-serif; }
+        .addAnArticle { color: blue; font-size: 18px; font-weight: bold; margin-bottom: 20px; }
+        body {
+            background-image: url('/wano-background.jpg');
+            font-family: Arial, sans-serif; }
         h1 { text-align: center; }
         ul { list-style-type: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: space-around; }
         li { width: 27%; margin: 10px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease-in-out; }
@@ -14,6 +16,9 @@
         p { word-wrap: break-word; }
         .delete-button { background-color: #dc3545; color: #fff; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
         .delete-button:hover { background-color: #c82333; }
+        .edit-button { background-color: #007bff; color: #fff; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
+        .edit-button:hover { background-color: #218838; }
+        .button-container { display: flex; justify-content: space-between; }
     </style>
 </head>
 <body>
@@ -26,10 +31,16 @@
             <li>
                 <h2>{{ article.title }}</h2>
                 <p>{{ article.text }}</p>
-                <form method="post" action="/delete-article">
-                    <input type="hidden" name="article_id" value="{{ article.id }}">
-                    <button type="submit" class="delete-button">Delete</button>
-                </form>
+                <div class="button-container">
+                    <form method="post" action="/edit-article">
+                        <input type="hidden" name="article_id" value="{{ article.id }}">
+                        <button class="edit-button" type="submit">Edit</button>
+                    </form>
+                    <form method="post" action="/delete-article">
+                        <input type="hidden" name="article_id" value="{{ article.id }}">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                </div>
             </li>
         {% endfor %}
     </ul>
