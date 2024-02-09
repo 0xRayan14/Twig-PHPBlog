@@ -93,14 +93,20 @@ $app->get('/search', function ($request, $response) use ($twig, $pdo) {
     return $twig->render($response, 'articles.twig', ['articles' => $articles]);
 });
 
+
 $app->get('/sort-az', function ($request, $response) use ($twig, $pdo) {
-    $stmt = $pdo->prepare("");
+    $stmt = $pdo->query("SELECT * FROM articles ORDER BY title ");
     $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $twig->render($response, 'articles.twig', ['articles' => $articles]);
 });
 
 $app->get('/sort-za', function ($request, $response) use ($twig, $pdo) {
-    $stmt = $pdo->prepare("SELECT ");
+    $stmt = $pdo->query("SELECT * FROM articles ORDER BY title DESC");
     $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $twig->render($response, 'articles.twig', ['articles' => $articles]);
 });
+
 
 $app->run();
