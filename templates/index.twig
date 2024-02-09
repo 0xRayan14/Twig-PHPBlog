@@ -48,6 +48,8 @@
 
         input[type="text"],
         textarea {
+            font-family: Arial, sans-serif;
+            font-size: 1.8vh;
             width: 100%;
             padding: 10px;
             margin: 8px 0;
@@ -73,6 +75,7 @@
             color: blue;
             text-underline: black;
         }
+
     </style>
 </head>
 <body>
@@ -81,10 +84,11 @@
 
 <h1>JobTrek Blog</h1>
 
-
 <form class="blog-input" method="post" action="/submit-article">
     <h1>Title of the article</h1>
-    <input minlength="5" maxlength="40" type="text" name="article_title" placeholder="Title of the article" required>
+    <label>
+        <input minlength="5" maxlength="40" type="text" name="article_title" placeholder="Title of the article" required>
+    </label>
 
     <h3>Text of the article</h3>
     <label>
@@ -93,6 +97,5 @@
 
     <input type="submit" value="Submit">
 </form>
-
 </body>
 </html>

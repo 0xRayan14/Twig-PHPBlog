@@ -65,8 +65,19 @@
 
 <div class="search-bar">
     <form method="get" action="/search">
-        <input type="text" name="title" class="search-input" placeholder="Search by title">
+        <label>
+            <input type="text" name="title" class="search-input" placeholder="Search by title">
+        </label>
         <button type="submit" class="search-button">Search</button>
+    </form>
+</div>
+
+<div class="sort-alphabetical">
+    <form method="get" action="/sort-az">
+        <button type="submit" class="az-button">Sort AZ</button>
+    </form>
+    <form method="get" action="/sort-za">
+        <button type="submit" class="za-button">Sort ZA</button>
     </form>
 </div>
 

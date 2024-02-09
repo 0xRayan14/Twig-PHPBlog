@@ -10,7 +10,10 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $app = AppFactory::create();
 
-$twig = Twig::create(__DIR__ . '/../templates', ['cache' => false]);
+try {
+    $twig = Twig::create(__DIR__ . '/../templates', ['cache' => false]);
+} catch (\Twig\Error\LoaderError $e) {
+}
 $app->add(TwigMiddleware::create($app, $twig));
 
 $databasePath = __DIR__ . '/../database.db';
@@ -66,7 +69,6 @@ $app->post('/edit-article', function ($request, $response) use ($pdo, $twig) {
     $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $twig->render($response, 'edit-article.twig', ['article' => $article]);
-
 });
 
 $app->post('/update-article', function ($request, $response) use ($pdo) {
@@ -91,5 +93,14 @@ $app->get('/search', function ($request, $response) use ($twig, $pdo) {
     return $twig->render($response, 'articles.twig', ['articles' => $articles]);
 });
 
+$app->get('/sort-az', function ($request, $response) use ($twig, $pdo) {
+    $stmt = $pdo->prepare("");
+    $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+});
+
+$app->get('/sort-za', function ($request, $response) use ($twig, $pdo) {
+    $stmt = $pdo->prepare("SELECT ");
+    $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+});
 
 $app->run();
