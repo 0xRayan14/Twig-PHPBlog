@@ -1,0 +1,73 @@
+.addAnArticle {
+    color: white;
+    text-underline: none;
+    font-size: 35px;
+    text-align: center;
+    justify-content: center;
+}
+
+.addButton {
+    height: 7vh;
+    margin-left: 43%;
+    margin-top: 3%;
+    display: flex;
+}
+
+body {
+    background-image: url('wano-background.jpg');
+    font-family: Arial, sans-serif;
+}
+h1 { color: white; text-align: center; margin-top: 3%}
+ul { list-style-type: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: space-around; }
+li { font-size: 20px; width: 42%; margin: 10px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease-in-out; background-color: white}
+li:hover { transform: scale(1.05); }
+p { word-wrap: break-word; }
+.delete-button {background-color: #dc3545; color: #fff; border: none; padding: 15px 17px; border-radius: 5px; cursor: pointer; }
+.delete-button:hover { background-color: #c82333; }
+.edit-button:hover { background-color: #218838; }
+.button-container { margin-bottom: 0; display: flex; justify-content: space-between; }
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    font-size: 1.9vh;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.validation-message {
+    margin-left: 30%;
+    margin-right: 30%;
+    color: green;
+    border-radius: 5px;
+    margin-bottom: 5%;
+    text-align: center;
+}
+.search-bar {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.search-input {
+    padding: 1.15vh;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.5vh;
+    width: 50%;
+    margin-bottom: 19px;
+}
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.sort-alphabetical {
+    justify-content: space-evenly;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+a {
+    margin-top: 5%;
+    text-decoration: none;
+    color: white;
+}

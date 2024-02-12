@@ -4,79 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog</title>
-    <style>
-        body {
-            background-image: url('/wano-background.jpg');
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            text-align: center;
-            margin-top: 30px;
-            color: #333;
-        }
-
-        a {
-            text-decoration: none;
-            color: #007bff;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .blog-input {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 a {
-            text-decoration: none;
-        }
-
-        h1 a:hover {
-            text-decoration: underline;
-        }
-
-        input[type="text"],
-        textarea {
-            font-family: Arial, sans-serif;
-            font-size: 1.8vh;
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-        .allArticles {
-            color: blue;
-            text-underline: black;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -85,10 +13,22 @@
 <h1>JobTrek Blog</h1>
 
 <form class="blog-input" method="post" action="/submit-article">
-    <h1>Title of the article</h1>
     <label>
+        <h2>Title of the article</h2>
+
         <input minlength="5" maxlength="40" type="text" name="article_title" placeholder="Title of the article" required>
     </label>
+
+
+    <h3>Category</h3>
+    <label for="article_category"></label>
+    <select name="article_category" id="article_category">
+        <optgroup label="Category">
+            <option>Sport</option>
+            <option>Action</option>
+            <option>Animals</option>
+        </optgroup>
+    </select>
 
     <h3>Text of the article</h3>
     <label>
