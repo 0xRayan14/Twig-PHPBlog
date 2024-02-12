@@ -19,6 +19,16 @@
         <label for="article_title">Title of the article</label>
         <input minlength="5" maxlength="40" type="text" id="article_title" name="article_title" value="{{ article.title }}" required>
 
+        <h3>Category</h3>
+        <label for="article_category"></label>
+        <select name="article_category" id="article_category">
+            <optgroup label="Category">
+                <option>Sport</option>
+                <option>Action</option>
+                <option>Animals</option>
+            </optgroup>
+        </select>
+
         <label for="article_text">Text of the article</label>
         <textarea minlength="5" maxlength="750" id="article_text" name="article_text" required>{{ article.text }}</textarea>
 

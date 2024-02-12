@@ -80,9 +80,10 @@ $app->post('/update-article', function ($request, $response) use ($pdo) {
     $articleId = $request->getParsedBody()['article_id'];
     $title = $request->getParsedBody()['article_title'];
     $text = $request->getParsedBody()['article_text'];
+    $category = $request->getParsedBody()['article_category'];
 
-    $stmt = $pdo->prepare("UPDATE articles SET title = ?, text = ? WHERE id = ?");
-    $stmt->execute([$title, $text, $articleId]);
+    $stmt = $pdo->prepare("UPDATE articles SET title = ?, text = ?, category = ? WHERE id = ?");
+    $stmt->execute([$title, $text, $category, $articleId]);
 
     $_SESSION['messages'] = ['Article successfully updated'];
     return $response

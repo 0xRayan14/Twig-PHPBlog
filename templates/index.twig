@@ -8,34 +8,37 @@
 </head>
 <body>
 
-<h1 class="allArticles"><a href="/articles">All articles</a></h1>
+<div class="container">
+    <div class="header">
+        <h1><a href="/articles">All articles</a></h1>
+        <h1>Jobtrek Blog</h1>
+    </div>
 
-<h1>JobTrek Blog</h1>
+    <form class="blog-input" method="post" action="/submit-article">
+        <label>
+            <h2>Title of the article</h2>
 
-<form class="blog-input" method="post" action="/submit-article">
-    <label>
-        <h2>Title of the article</h2>
-
-        <input minlength="5" maxlength="40" type="text" name="article_title" placeholder="Title of the article" required>
-    </label>
+            <input minlength="5" maxlength="40" type="text" name="article_title" placeholder="Title of the article" required>
+        </label>
 
 
-    <h3>Category</h3>
-    <label for="article_category"></label>
-    <select name="article_category" id="article_category">
-        <optgroup label="Category">
-            <option>Sport</option>
-            <option>Action</option>
-            <option>Animals</option>
-        </optgroup>
-    </select>
+        <h3>Category</h3>
+        <label for="article_category"></label>
+        <select name="article_category" id="article_category">
+            <optgroup label="Category">
+                <option>Sport</option>
+                <option>Action</option>
+                <option>Animals</option>
+            </optgroup>
+        </select>
 
-    <h3>Text of the article</h3>
-    <label>
-        <textarea minlength="5" maxlength="750" name="article_text" placeholder="Text of the article" required></textarea>
-    </label>
+        <h3>Text of the article</h3>
+        <label>
+            <textarea minlength="5" maxlength="750" name="article_text" placeholder="Text of the article" required></textarea>
+        </label>
 
-    <input type="submit" value="Submit">
-</form>
+        <input type="submit" value="Submit">
+    </form>
+</div>
 </body>
 </html>

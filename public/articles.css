@@ -1,19 +1,24 @@
 .addAnArticle {
+    height: 3vh;
     color: white;
     text-underline: none;
     font-size: 35px;
     text-align: center;
     justify-content: center;
 }
+span {
+    color: green;
+}
 
 .addButton {
-    height: 7vh;
+    height: 6vh;
     margin-left: 43%;
     margin-top: 3%;
     display: flex;
 }
 
 body {
+    background-size: 190vh;
     background-image: url('wano-background.jpg');
     font-family: Arial, sans-serif;
 }
@@ -41,9 +46,19 @@ button {
     margin-right: 30%;
     color: green;
     border-radius: 5px;
-    margin-bottom: 5%;
     text-align: center;
+    animation: hideAnimation 0s ease-in 3s;
+    animation-fill-mode: forwards;
 }
+
+@keyframes hideAnimation {
+    to {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+}
+
 .search-bar {
     margin-bottom: 20px;
     text-align: center;

@@ -44,8 +44,7 @@
     <ul>
         {% for article in articles %}
             <li>
-                <h2>{{ article.title }}</h2>
-                <h3>{{ article.category }}</h3>
+                <h2>{{ article.title }} <span>- ({{ article.category }})</span></h2>
                 <p>{{ article.text }}</p>
                 <div class="button-container">
                     <form method="post" action="/edit-article">
